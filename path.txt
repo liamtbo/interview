@@ -1,0 +1,24 @@
+get supervised learning project up
+    titanic by kaggle, get experience in kaggle and unsup
+        need to learn decision trees
+read openai marl paper hide and seek
+
+learning supervised
+    algos
+        decision trees (done)
+        random forests (done)
+        support vector machines (done)
+        k-nearest neighbors (done)
+        linear/logistic regression
+    frameworks
+        scikit-learn
+        tensorflow/pytorch (done)
+learning unsupervised ml
+    algos
+        clustering
+            K-means, DBSCAN
+        dim reduction 
+            pcs, t-sne
+        anomaly detection
+    libraries
+        scikit-learn
