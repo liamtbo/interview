@@ -7,7 +7,7 @@
 
 # Core Machine Learning Concepts
 
-- [ ] **Supervised Learning:** Familiarize yourself with linear regression, decision trees, SVMs, and neural networks.
+- [x] **Supervised Learning:** Familiarize yourself with linear regression, decision trees, SVMs, and neural networks.
 - [ ] **Unsupervised Learning:** Learn about clustering, dimensionality reduction (PCA), and autoencoders.
 - [x] **Deep Learning:** Dive into neural networks, backpropagation, and popular frameworks like PyTorch or TensorFlow.
 
@@ -36,7 +36,7 @@
 
 # Practical Experience
 
-- [ ] **Projects:** Build and complete RL projects like training agents to play games (e.g., CartPole, Atari), robotics simulations, or financial trading strategies.
+- [x] **Projects:** Build and complete RL projects like training agents to play games (e.g., CartPole, Atari), robotics simulations, or financial trading strategies.
 - [ ] **Competitions:** Participate in RL competitions on platforms like Kaggle or AIcrowd to test your skills against real-world problems.
 - [ ] **Internships/Research:** Gain experience through internships or research assistant positions focusing on RL.
 

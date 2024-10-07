@@ -1,24 +1,15 @@
-get supervised learning project up
-    titanic by kaggle, get experience in kaggle and unsup
-        need to learn decision trees
-read openai marl paper hide and seek
-
 learning supervised
     algos
         decision trees (done)
         random forests (done)
         support vector machines (done)
         k-nearest neighbors (done)
-        linear/logistic regression
+        linear/logistic regression (done)
     frameworks
         scikit-learn
         tensorflow/pytorch (done)
-learning unsupervised ml
-    algos
-        clustering
-            K-means, DBSCAN
-        dim reduction 
-            pcs, t-sne
-        anomaly detection
-    libraries
-        scikit-learn
+twinwave job (primary focus)
+    learn go
+        solve leet code q's in go
+    interview q's too
+        do like 10 a day

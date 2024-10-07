@@ -1,0 +1,76 @@
+1. What are the different types of machine learning?
+    supervised
+        trained using labeled dataset
+    unsupervised
+        trained with unlabeled dataset
+        tasekd with finding patterns, anomolies, and relationships
+    Reinforcement learning
+        Markov decision process
+        s,a,r,s',a'
+
+2. What is Overfitting and how can you avoid it?
+    overfitting occurs when a model starts to learn the non-generalized details of a training set
+    one can avoid overfitting by
+        regularization techniques 
+            such as L1 and L2 regularization which penalizes a network for having large weights.
+        making a simple model
+    
+3. What is a "training set" and "test set" in a machine learning model? How much data will you allocate for your training, validation, and test sets?
+    trainig set
+        data used to train the model, usually around 75%-80% of data set
+    validation set
+        used to catch overfitting occuring, 15% - 10%
+    test set
+        used to test the model, use around 5-10%
+
+4. How do you handle missing or corrupted data in a dataset?
+    drop those rows or cols, or replace
+
+5. How can you choose a classifier based on a training set data size?
+    involves balancing bias-variance trade-off
+    small training dataset
+        risk of overfitting is high bc model has less data to generalize frame
+        want high bias low variance
+            model may not perfectly fit training data but will generalize better
+            higher overfitting will help combat high bias
+        recommended classifiers:
+            naive bayes, logistic regession, linear SVM, K-Nearest neighbors
+    medium training dataset
+        explore more complex models that balance bias and variance
+        recommended classifiers:
+            decision trees, random forests, support vector machines, gradient boostins machines
+    large training dataset
+        more flexibility to use complex models that can capture intricate relationships in the data
+        since more data, risk of overfitting decreases
+        low bias and high variance models can perform well
+            high-variance models (deep nn, decision trees) tend to overfit small datasets by learning not only the true patterns but noise too. However, with a large dataset, there's much more information for the model to learn from, and the prescence of noise becomes proportionally smaller. As a result the models tendency to overfit decreases
+        recommended classifiers
+            nn, random forests, and gradient boosting
+
+6. explain the confusion matrix w.r.t ML algorithms
+    x-axis, y-axis = actual, predicted categories
+    across the diagnol is accuracy
+
+7. what are false positives and false negative and how are they significant?
+    false positives
+        predicted = true, actual = false
+    false negatives
+        predicted = false, actual = true
+    significant bc they're incorrect classifications
+
+8. Three stages of building a model in ml?
+    1. model building
+    2. model testing
+    3. applying model
+
+9. what is deep learning
+    a subset of ml that uses several layer of neurons in their neural networks
+    feature engineering is done manually in ml, while in deep learning the model will determine which features to and not to use
+
+10. what are the applications of supervised machine learning in modern businesses?
+    email spam detection, sentiment analysis, fraud detection
+
+11. what is semi-supervised machine learning?
+    small amount of labeled data and large amount of unlabeled data
+
+12. what are some unsupervised machine learning techniques
