@@ -1,0 +1,279 @@
+
+steps to success:
+    review both transformer and CNN project
+    review general cyber sec ML concepts (common predictions, data collection/creation)
+    how yolo can be used for phishing prediction
+    easy sql leetcode
+
+last ML interview at splunk:
+    yolo
+    artificially increasing dataset for phishing websites/emails
+        creating your own, changing colors, font, ect.
+    balancing data set for phishing websites/emails
+    using yolo for phishing website classificaion
+        come up with 3 different architectures
+
+
+Work/Project Experience
+    Data Science/ML Projects
+        "Tell me about a machine learning project you worked on. What was your role?"
+            helped professor Yu Wang on his research.
+            Goal was to predict states based on research proposal abstracts
+            downloaded data set from SBIR website,
+            used excel to turn it into a csv file.
+            core focus is on applying custom encoder-only Transformer architecture for sequence classification, using state-based proposal abstracts as input data.
+            Data Loading and Preprocessing:
+                Loading Data: The program begins by loading a CSV file containing state-related proposal abstracts using pandas. It then processes the text data by cleaning up whitespace and normalizing text (e.g., removing newline characters and converting text to uppercase).
+                Removing Missing Data: It removes entries with missing values for both "State" and "Abstract" columns.
+                Grouping Data: The data is grouped by state, with each state's proposals organized into lists.
+            Dataset Creation:
+                Splitting Data: The dataset is split into a training set (75%) and a test set (25%) for each state. The program creates separate lists for the texts (abstracts) and their corresponding labels (states).
+                Tokenization: Each abstract is tokenized, i.e., split into words after removing non-alphabetical characters and converting the text to lowercase.
+            Vocabulary Building:
+                Creating Vocabulary: The program builds a vocabulary by counting the frequency of each word across the training data. It keeps only the 10,000 most frequent words and assigns each word an index.
+            Encoding and Padding:
+                Encoding Tokens: Each token in the abstracts is replaced by its corresponding index from the vocabulary. If a word is unknown (not in the vocabulary), it’s replaced by a special <UNK> token. All abstracts are then padded or truncated to ensure they are all of the same length (250 tokens) so we can train in batches.
+            Model Definition:
+                Transformer Model: A neural network model based on a Transformer architecture is defined. It consists of:
+                Embedding Layer: Converts word indices into dense vectors (embeddings).
+                Positional Encoding: Adds information about the position of each word in the sequence.
+                Transformer Encoder: A multi-layer Transformer encoder processes the sequence to capture contextual dependencies.
+                Fully Connected Layer: Outputs the class probabilities (state labels).
+            Training the Model:
+                Loss and Optimizer: The model uses CrossEntropyLoss for multi-class classification and the Adam optimizer for training.
+                Training Loop: For each epoch, the model is trained on the batches of data. Gradients are computed and weights are updated to minimize the loss.
+            Model Evaluation:
+                Test Accuracy: After training, the model’s performance is evaluated on the test set. The model predicts labels for the test data, and accuracy is calculated by comparing the predicted labels with the true labels.
+        "How did you evaluate the performance of your model?"
+            used argmax to select the most confident output neuron, compared it to it's respective ground-truth, added up the correctly classified and divided by the total number of predictions
+        "What challenges did you face, and how did you overcome them?"
+            While training a Transformer model, I encountered a recurring issue where the model would randomly output NaN values during certain iterations. I began troubleshooting by researching common causes for NaNs in PyTorch Transformers, which led me to consider gradient explosion, vanishing gradients, or the presence of NaNs in the input data. I implemented data cleaning to remove any rows containing NaNs and experimented with gradient clipping before updates, but the problem persisted. After further investigation, and reading forums, I noticed a common theme of a newer version of pytorch then my environment. Using conda list and discovered I was running an outdated version of PyTorch. Once I upgraded to a more recent version, the NaN issue was resolved.
+        "How does a transformer work?"
+        "how does cross-entropy loss work?"
+            commonly used for classification problems, especially when the output is a probability distribution (like in softmax). It measures the difference between two probability distributions: the true labels and the predicted probabilities.
+        What is vanishing/exploading gradient and solutions?
+            Problems that occur during backpropagation in deep neural networks, especially very deep ones or those using recurrent structures (like RNNs or Transformers).
+            Vanishing Gradients:
+                Happens when activation functions like sigmoid or tanh squash outputs into small ranges (e.g., [0,1] or [-1,1]).
+                Their derivatives are < 1, so repeated multiplication causes gradients to approach zero.
+                Effect: Early layers learn very slowly or not at all.
+            Exploding Gradients
+                Occurs when weights or gradients become large → backprop multiplies big values → gradient becomes very large.
+                Effect: Weight updates become too large, and the model diverges.
+            Solutions:
+                vanishing gradient
+                    relu (deriv is 1 for pos input)
+                exploading gradient
+                    gradient clipping
+                    proper weight interview
+                    normalize inputs
+
+Common Cyber ML applications
+    Common cyber security ML applications
+        Anomaly detection
+            unsupervised/semi-supervised
+            Goal: Identify rare, suspicious patterns in unlabeled data (e.g., logs, network traffic).
+            Techniques:
+                Clustering: K-means 
+                    (calc dist from each point to it's respective cluster point, points above a threshold distance are outliers)
+                Isolation Forest: Efficient for high-dimensional data (e.g., detecting unusual data transfers).
+                Autoencoders: Reconstruct normal data; high reconstruction error = anomaly.
+                Time-series models: LSTMs/Prophet to detect spikes in traffic or logins.
+        Threat detection
+            supervised learning
+            Goal: Classify known threats (e.g., malware, phishing) using labeled data.
+            Techniques:
+                Binary Classification: Logisitic Regression, Random Forest, XGBoost for malware detection.
+                Handling Imbalance: Oversampling (SMOTE), class weights, and precision-recall metrics.
+
+Common Data Issues & Solutions
+    Class Imbalance
+        Problem: 
+            Attacks are rare (e.g., 0.01% malware in logs). Models bias toward majority class.
+        Method	Pros	Cons
+        Oversampling (SMOTE, ADASYN)	Balances dataset synthetically	Can create unrealistic samples
+        Undersampling	Reduces majority class size	Loses useful data
+        Class Weighting	Adjusts loss function (e.g., class_weight='balanced' in sklearn)	May not work for extreme imbalance
+        Anomaly Detection (Unsupervised)	Doesn’t need labels (e.g., Isolation Forest)	Harder to tune
+    Noisy/Low-Quality Data
+        Problems:
+            Missing fields (e.g., blank IPs in logs).
+            Irrelevant logs (e.g., routine backups flooding data).
+        Solutions:
+            Preprocessing:
+                Drop/Impute missing values (e.g., fill nulls with -1 or mean).
+                Filter noise (e.g., exclude known benign IPs).
+            Feature Engineering:
+                Aggregate raw logs (e.g., count_failed_logins_per_hour).
+    Lack of Labeled Data
+        Problem: Most logs are unlabeled (no "malicious/benign" tags).
+        Solutions:
+            Approach	How It Works
+            Weak Supervision	Use heuristics (e.g., "any IP in threat feed = malicious")
+            Active Learning	Human-in-the-loop labeling (e.g., Splunk analysts flag suspicious events)
+        Best Practice:
+            Start with rule-based detection (e.g., Splunk SPL alerts) to generate weak labels.
+    Concept Drift (Changing Attack Patterns)
+        Problem: Models degrade as attackers evolve (e.g., new malware variants).
+        Solutions:
+            Continuous Retraining: Automatically update models with fresh data.
+            Drift Detection: Monitor metrics (e.g., sudden drop in precision).
+            Online Learning: Incrementally update models
+
+YOLO
+    input
+        image with 3 channels (RGB), pixels normalized
+    output
+        for each object detected, Outputs
+            (x,y,w,h) of bounding box
+            objectness score (prob obj exists in box)
+            class probabilties dis over all classes
+            confidence score (combining objectness and class probs score)
+    Start with a pretrained YOLO model
+        Use a base model trained on a large dataset like COCO. This gives you foundational object detection capability (detecting general items like logos, buttons, input fields, etc.).
+    Fine-tune it on your phishing-specific dataset
+        Collect screenshots of both legitimate and phishing websites.
+
+    Annotate elements of interest:
+        Fake brand logos
+        Login forms mimicking real sites
+        Suspicious pop-ups or overlays
+
+    
+
+General ML Fundamentals (Basics you should know for any ML role)
+    "what are some different loss functions and when would you apply them?"
+        MSE - Regression
+        MAE - Regression
+        Binary Cross-Entropy - binary classification
+        Categorical Cross-Entropy - Mulit-class classification
+
+    "Explain the bias-variance tradeoff. How does it apply to security ML models?"
+        described tension between two sourcees of error in model predictions:
+        bias: 
+            error due to overly simplistic assumptions in the learning algorithm.
+        variance: 
+            error due to the model being too sensitive to small fluctuations in the training data.
+        low bias, high variance -> overfitting
+        high bias, low variance -> underfitting
+        overfitting
+            model with goal of identifying intrusion detection
+            might memorize specific patterns found in training data, but fail to generalize
+        underfitting
+            failure to learn meaningful patterns in data, leading to low classification scores
+    "What’s the difference between supervised and unsupervised learning? Give a security example for each."
+        supervised
+            requires a labeled dataset
+            spam vs ham
+        unsupervised
+            uses an unlabeled data set.
+            watching network traffic for anomolies
+    "How would you handle overfitting in a malware detection model?" (e.g., regularization, cross-validation)
+        increase training dataset size
+        decrease model complexity
+        L1, L2
+        cross-validation
+    "What evaluation metrics would you use for an imbalanced dataset (e.g., 99% normal vs. 1% malicious traffic)?" (Precision, Recall, F1, AUC-PR)
+        traditional accuracy becomes misleading — a model that always predicts “normal” would be 99% accurate but totally useless
+        precision 
+            Of all the samples predicted as malicious, how many were actually malicious?
+        recall
+            Of all actual malicious samples, how many did the model correctly identify?
+fundamentals of imbalanced data
+    "Why is imbalanced data a problem in cybersecurity ML? Give an example."
+        (Expected: Rare attacks (e.g., 0.1% malware) lead to models biased toward the majority class. Example: A model that always predicts "benign" achieves 99.9% accuracy but misses all threats.)
+    "What metrics should you avoid for imbalanced datasets, and why?"
+        *(Expected: Accuracy (misleading due to class skew). Use precision, recall, F1, AUC-PR instead.)*
+    "Explain the difference between precision and recall in fraud detection. Which is more important?"
+        (Expected: Precision = % of flagged frauds that are real. Recall = % of real frauds caught. Trade-off depends on costs: High recall for critical threats, high precision to reduce analyst workload.)
+
+general interview questions
+    STAR (Situation, Task, Action, Result) answers only!
+    Questions About Your ML Projects
+        Tell me about a machine learning project you've worked on. What was the goal, and what did you learn from it?
+            I worked in professor yu wangs research lab, where we developed a custom encoder only transformer for predicting states based on funding proposal abstracts. The goal was to traing the model to accurately predict states based on proposals. I learned how to build transformers, got more experience in pytorch, and debugging transformers.
+        How did you choose the features for your model?
+            the features for our model were the first 250 tokens (words) of an abstract. 250 was an arbitrary decision.
+        What model(s) did you try and why?
+            My first atttempt was a naive bayes model implemented with sci-learn. The accuracy on the test data wasn't great so we decided to try a transformer architecture after.
+        What performance metrics did you use to evaluate your model?
+            For the transformer model we we simply argmaxed the softmaxed output, compared it to the ground truth, and did accuracte / total
+        Describe a challenge you faced during the project and how you overcame it.
+            The transformer was outputting NaN on random iterations, ruining every iteration after as it propgated through the training. I searched the error, used torch.error() to locate exactly what line caused the first nan to appear, used this to refine my search results. Forums said this was caused by either NaN in input data or gradient explosion / vanishing. I added NaN and gradient clipping but error occured. At this point I realized many posts in the forums used a much newer version of pytorch then mine. I updated my pytorch and the error disappeared.
+        How did you validate your results? Did you use cross-validation or a separate test set?
+            we split up the data 75% 25% between training and test sets
+        What would you do differently if you could restart that project?
+            i don't know.
+        Have you ever deployed or productionized a model? If not, what steps would you take to do so?
+            No. The steps I would take is to make sure it's reliable, and robust wrt to security.
+        Did you do any hyperparameter tuning? If so, how did you approach it?
+            Not on this project, on previous projects I've implemented grid search
+        What was your biggest takeaway or insight from the project?
+            How transformers worked in general, and how to debug them.
+    General ML Understanding
+        What’s the difference between supervised, unsupervised, and reinforcement learning?
+
+        Explain the bias-variance tradeoff.
+            bias the error of over simplistic assumptions made by the learning algorithm.
+            variance is the resulting error of making small changes to the dataset.
+        How do you handle imbalanced datasets?
+            this is a very common problem with cyber sec data sets and there are many different strategies to remedy this
+            oversampling the minority data category
+            undersampling the majority data category
+            artifically creating minority samples
+            using precision recall for evaluation
+            framing problem as anomaly detection
+            
+1. Select all data from a table
+Get all rows from a table called users:
+
+SELECT * FROM users;
+
+2. Count rows in a table
+Count total number of entries in the logs table:
+
+SELECT COUNT(*) FROM logs;
+
+3. Find unique values
+Get all distinct countries from the users table:
+
+SELECT DISTINCT country FROM users;
+
+4. Filter with WHERE clause
+Get all users from the USA:
+
+SELECT * FROM users WHERE country = 'USA';
+
+5. Sorting results
+Get all users sorted by age in descending order:
+
+SELECT * FROM users ORDER BY age DESC;
+
+6. Limiting results
+Get the first 5 users from the table:
+
+SELECT * FROM users LIMIT 5;
+
+7. Aggregation with GROUP BY
+Count how many users are from each country:
+
+SELECT country, COUNT(*) 
+FROM users 
+GROUP BY country;
+
+8. Pattern matching with LIKE
+Find all users whose names start with 'A':
+
+SELECT * FROM users WHERE name LIKE 'A%';
+
+9. Using BETWEEN
+Get users aged between 18 and 25:
+
+SELECT * FROM users WHERE age BETWEEN 18 AND 25;
+
+10. INNER JOIN
+Get users and their login times from users and logins tables:
+
+SELECT users.name, logins.login_time
+FROM users
+INNER JOIN logins ON users.id = logins.user_id;

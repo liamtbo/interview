@@ -1,0 +1,77 @@
+bias: 
+    error due to overly simplistic assumptions in the learning algorithm.
+variance: 
+    error due to the model being too sensitive to small fluctuations in the training data.
+low bias, high variance -> overfitting
+high bias, low variance -> underfitting
+
+Work/Project Experience
+    custom encoder-only Transformer architecture for sequence classification, using state-based proposal abstracts as input data.
+    data loading and Preprocessing
+        loading data
+        process text and normalize
+        remove missing values
+        group data by state
+    dataset creation
+        split data 75 25
+        parallel lists of abstract and state
+        tokenize
+    vocab Building
+        count word freq 10,000
+        assing each a unique index
+    encoding and paddiing
+        each token in abs replaces by index from vocab
+        this is done for embedding retrieval later
+    model Definition
+        embedding layer
+        positional encoding layer
+        trarnsformer encoding (to caputer contextual dependencies)
+        FFN output class probs
+    training the model
+        crossEntropyLoss for multi-classification
+        traning loop using batches
+    Model evaluation
+        argmax'd the softmaxed output, correct / total
+    
+Anomaly detection
+    unsupervised/semi-supervised
+    Goal: Identify rare, suspicious patterns in unlabeled data (e.g., logs, network traffic).
+    Techniques:
+        Clustering: K-means 
+            (calc dist from each point to it's respective cluster point, points above a threshold distance are outliers)
+        Time-series models: predict next value, look at diff of actual vs expected
+Threat detection
+    supervised learning
+    Goal: Classify known threats (e.g., malware, phishing) using labeled data.
+    Techniques:
+        Binary Classification: Logisitic Regression, Random Forest
+
+Common Data Issues and Solutions:
+    Class Imbalance:
+        undersampling minority
+        oversampling majority
+        class Weighting
+        anomaly detection
+    Noisy/Low-Quality Data
+        Drop/Impute missing values (null, mean)
+        filter out noise
+    Lack of labeled data
+        semi-supervised - train a model to label the data
+        active learning - human annotator
+        data augmentation - create synthetic data (flipping, rotating) 
+    concept drift (changing attack patterns)
+        continuous Retraining
+        drift detection
+        online learning - incrementally update models
+
+CNN
+    convolutional layers
+        filters (kernels) slide across image computing dot products
+    activation function
+        Relu applies non linear transformations
+    Pooling layers
+        max pooling downsamples the images, reducing computation
+    Fully conneted layers
+        data is finally flattened and passed through dense layers for classification
+    output layers
+        softmax'ed

@@ -73,4 +73,61 @@
 11. what is semi-supervised machine learning?
     small amount of labeled data and large amount of unlabeled data
 
-12. what are some unsupervised machine learning techniques
+12. what are some unsupervised machine learning 
+    two techniques: clustering and association
+
+13. Diff between supervised and unsupervised ml?
+    supervised uses a labeled training set and make future predictions as output
+    unsupervised uses unlabeled and finds patterns in the data without guidance
+
+14. Diff between inductive ML and deductive ML?
+    inductive - observes instances based on defined principles to draw a conclusion
+    deductive - draws conclusions based on experiences
+
+15. K-means vs KNN # TODO
+
+16. What is naive in the naive bayes classifier? # TODO
+
+17. explain how a system can play a game of chess using RL
+    use Deep-Q network
+    nn learns to assign values to similar chess states based on some sort of reward system such as winning or losing a game
+
+19. How will you know which ML algo to choose for your classification problem?
+    if accuracy is a concern, try different algorithms and cross validate
+    if dataset is small, choose simple models with high bias and low variance
+        we want to underfit the data a little bit so that our model does better generalization
+    if dataset is large, choose complex models with low bias and high variance
+        since our dataset is large, the complex models will have enough detail to not overfit
+
+20. How is Amazon able to recommend other things to buy? how does the recommendation engine work?
+    amazon keeps track of your purchases and uses an unsupervised association algorithm
+
+21. When will you use classifiction over regression?
+    you use classification when you want to sort an input into discrete categories
+    you use regression when you want to predict a continuous number from an input
+
+22. How do you design an email spam filter?
+    need a labeled training set of spam and ham.
+    use naive bayes model to make predictions
+
+23. what is a random forest?
+    machine learning algo that is primarily used for classification and regression tasks.
+    operates by constructing multiple decision trees during training and outputting either the mode of the classes (for classification) or the mean prediction (for regression) of the individual trees.
+    
+24. considering a long list of machine learning algorithms, given a data set, how do you decide which one to use?
+    choosing a machine learning algorithm depends heavily on the size of the data set. For smaller datasets, simple algorithms with high bias and low varaince are preferred. For larger datasets, complex algorithm with low bias and high variance are preferred as they can caputure more features without overfitting heavily to the dataset.
+
+    is data conitnuouos or discrete?
+    classifcation associating, clustering, or regression?
+    labeled, unlabaled, mixed dataset?
+    goal?
+
+27. Define Precision and Recall
+    Precision = True Positive / (True positive + False Positive)
+        accuracy of positive predictions
+    Recall = True Positive / (True positive + False Negative)
+        models ability to find all positive instances
+
+28. What is a Decision Tree Classification?
+    supervised machine learning algorithm used for classiciation and regression tasks
+    flowchart like structure where each internal node represents a decision based on a feature.

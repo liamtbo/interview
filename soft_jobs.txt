@@ -1,0 +1,139 @@
+
+Anduril: Robotics Software Engineer, UAVs
+    Required Qualifications
+        Bachelor's degree in Robotics, Computer Science, or related field
+        3+ years of professional software development experience
+        Strong proficiency in C++ or Rust, with experience in Linux development environments
+        Demonstrated expertise in data structures, algorithms, concurrency, and code optimization
+        Proven experience troubleshooting and analyzing remotely deployed software systems
+        Hands-on experience working with and testing electrical and mechanical systems
+        Ability to collaborate effectively with cross-functional teams, including hardware and manufacturing
+        Strong problem-solving skills and a "Whatever It Takes" mindset
+        Excellent communication skills, both written and verbal
+        Eligible to obtain and maintain an active U.S. Secret security clearance
+        Willingness to relocate to Costa Mesa, CA 
+
+    Preferred Qualifications
+        Master's or Ph.D. in a relevant field (e.g., Robotics, Computer Science, Electrical Engineering)
+        Expertise in one or more advanced robotics areas: motion planning, perception, localization, mapping, or controls
+        Experience with performance optimization and metrics for complex robotic systems
+        Proficiency in Python, Rust, and/or Go, in addition to C++
+        Hands-on experience programming for embedded systems and physical devices
+        Background in multi-agent coordination, particularly with UAVs
+        Demonstrated ability to solve complex frame transformation problems (e.g., target localization, multi-degree-of-freedom robotic arms)
+        Experience with real-time operating systems and distributed computing
+        Familiarity with machine learning and AI applications in robotics
+        Knowledge of sensor fusion techniques and implementation
+        Understanding of aerodynamics and flight dynamics as applied to UAV systems
+        Experience with simulation environments for robotics testing and development
+        Track record of contributions to open-source robotics projects or relevant publications
+
+US Salary Range
+
+$138,000—$207,000 USD
+
+
+skydio Autonomy Engineer - Deep Learning
+    What Makes You a Good Fit
+        M.S. or Ph.D. in computer science, electrical engineering or related discipline
+        Demonstrated hands-on experience designing, training and deploying deep learning models
+        Ability to deliver high quality, well-architected code (Python/PyTorch and preferably, C++)
+        Leverage state-of-the-art academic papers and literature for fast iteration
+        Ability to thrive in a fast paced, collaborative and highly technical team environment
+        Comfortable navigating and delivering within a complex codebase
+        Strong communication skills
+
+
+Anduril: Robotics Software Engineer (Drones)
+    Required Qualifications
+        BS in Robotics, Computer Science, Mechatronics, Electrical Engineering, Mechanical Engineering, or related field
+        Proven understanding of data structures, algorithms, concurrency, and code optimization
+        Experience troubleshooting and analyzing remotely deployed software systems
+        Experience working with and testing electrical and mechanical systems
+        2+ Years experience with C++ or Rust experience in a Linux development environment
+        Must be eligible to obtain and hold a US DoD Security Clearance.
+
+    Preferred Qualifications
+        MS or PhD
+        Experience in one or more of the following: motion planning, perception, localization, mapping, controls, and related system performance metrics.
+        Python, Rust, and/or Go experience
+        Experience programming for embedded and physical devices
+        Multi-agent coordination of UAVs
+        Complex frame transformation problems, such as target localization or multi degree of freedom robotic arms
+
+
+Anduril Robotics Software Engineer
+    Required Qualifications:
+        BS in Robotics, Computer Science, Mechatronics, Electrical Engineering, Mechanical Engineering, or a related field.
+        Strong understanding of data structures, algorithms, concurrency, and code optimization.
+        Experience in troubleshooting and analyzing remotely deployed software systems.
+        Familiarity with electrical and mechanical systems (including testing and integration).
+        2+ years of experience with C++ or Rust in a Linux development environment.
+        Must be eligible to obtain and hold a US DoD Security Clearance.
+    Preferred Qualifications:
+        MS or PhD in a relevant field (Robotics, CS, Engineering).
+        Experience in one or more areas of motion planning, perception, localization, mapping, controls, or related system performance metrics.
+        Experience with complex frame transformation problems (e.g., target localization or multi-degree-of-freedom robotic arms).
+        Experience with Python, Rust, and/or Go.
+        Programming experience for embedded and physical devices.
+        Multi-agent coordination of UAVs (Unmanned Aerial Vehicles)
+
+Lockheed Martin: Cyber Software Engineer
+    Basic Qualifications:
+        Education: Bachelor’s in a related field or equivalent experience; Master’s for those with no experience.
+        Software Development: Ability to develop and maintain complex systems (real-time, large data sets).
+        Programming: Proficient in Java, C++ (Linux/UNIX) and Python.
+        Version Control: Familiar with Gitlab and Jira.
+        Security: Must be eligible for TS/SCI clearance.
+
+    Desired Skills:
+        Software Design: Experience in debugging, designing, and integrating software.
+        System Integration: Ability to integrate software into systems and develop database queries.
+        Leadership: Ability to lead teams and work with engineers to solve performance issues.
+        Signal Processing: Knowledge in signal flow, acquisition, and decoding.
+        Technologies: Familiar with Docker, Kubernetes, Agile, networking (TCP/IP, UDP), Linux system administration, and web technologies.
+
+Anduril: Software Engineer - Mission Autonomy
+    Required Qualifications
+        A strong foundation in computer science and software engineering fundamentals.
+        1 - 5 years of experience delivering software projects of significant complexity into production.
+        Prioritize the development of robust and dependable solutions that excel in real-world applications.
+        Strong modern C++ experience in a Linux development environment.
+        Strong technical communication skills.
+        A desire to work on software that has a real-world impact on the United States and its allies.
+        Comfortable working in a fast-paced, collaborative environment.
+        A bias for action. You have a track record of solving a problem if you see one.
+        U.S. Person status is required as this position needs to access export controlled data
+    Preferred Qualifications
+        Experience with behavior trees.
+        Experience with distributed and asynchronous systems.
+        Experience and/or demonstrated interest in AI/Robotics in one or more of the following areas: motion planning, sensor fusion, or multi-agent planning.
+        Experience in mathematical problem solving in areas including but not limited to: graph search, convex optimization, optimal allocation, and geometric methods.
+
+Anduril: software engineer, Battlespace Awareness
+    Required Qualifications
+        C/C++, Python, and Matlab;
+        Big data/NoSQL/database technologies;
+        AngularJS, Node.js, Javascript, and full-stack web development. 
+        Software engineering: software design, algorithm implementation, and software analysis, testing, and optimization;
+        Machine learning: supervised and unsupervised learning, clustering, and classification;
+        Applied mathematics: differential equations, linear algebra, optimization, statistics, and random processes;
+        Engineering: controls, estimation theory, and digital signal processing.
+        Eligible to obtain and maintain an active U.S. Top Secret SCI security clearance
+
+Anduril Industries - Mission Autonomy
+    Required Qualifications
+        A strong foundation in computer science and software engineering fundamentals.
+        1 - 5 years of experience delivering software projects of significant complexity into production.
+        Prioritize the development of robust and dependable solutions that excel in real-world applications.
+        Strong modern C++ experience in a Linux development environment.
+        Strong technical communication skills.
+        A desire to work on software that has a real-world impact on the United States and its allies.
+        Comfortable working in a fast-paced, collaborative environment.
+        A bias for action. You have a track record of solving a problem if you see one.
+        Must be a U.S. Person due to required access to U.S. export controlled information or facilities
+    Preferred Qualifications
+        Experience with behavior trees.
+        Experience with distributed and asynchronous systems.
+        Experience and/or demonstrated interest in AI/Robotics in one or more of the following areas: motion planning, sensor fusion, or multi-agent planning.
+        Experience in mathematical problem solving in areas including but not limited to: graph search, convex optimization, optimal allocation, and geometric methods.
